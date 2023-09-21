@@ -8,6 +8,7 @@ logging = importlib.import_module("functions.utils.wfn_logging")
 
 s3 = boto3.resource('s3')
 
+
 def call_inference(endpoint_name, payload, content_type='application/json'):
     runtime = boto3.client('runtime.sagemaker')
     response = runtime.invoke_endpoint(EndpointName=endpoint_name,
