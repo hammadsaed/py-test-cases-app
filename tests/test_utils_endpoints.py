@@ -3,7 +3,7 @@ from unittest import mock
 import importlib
 
 from wfn_logger_envs import wfn_logger_test_envs
-endpoints = importlib.import_module("functions.utils.endpoints_utils")
+endpoints = importlib.import_module("functions.endpoints-utils.main")
 
 @pytest.fixture
 def mock_sagemaker_runtime():

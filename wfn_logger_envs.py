@@ -7,5 +7,7 @@ def set_env_variables_for_logger():
     os.environ['AWS_REGION'] = 'your_aws_region'
     os.environ['AWS_LAMBDA_LOG_GROUP_NAME'] = 'your_lambda_log_group'
     os.environ['AWS_LAMBDA_LOG_STREAM_NAME'] = 'your_lambda_log_stream'
+    os.environ['ENDPOINT_NAME'] = 'your_endpoint_name'
+
 
 wfn_logger_test_envs = set_env_variables_for_logger()

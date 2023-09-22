@@ -1,3 +1,7 @@
+import importlib
+from functions.endpoints_utils.main import call_inference_api_gw
+from functions.utils.wfn_logging import wfn_logger, set_logger_context
+from splunk_handler import force_flush
 import json
 import sys
 import pickle
@@ -6,9 +10,10 @@ import boto3
 import io
 import time
 
-from splunk_handler import force_flush
-from wfn_logging import wfn_logger, set_logger_context
-from endpoints_utils import call_inference_api_gw
+logging = importlib.import_module("functions.utils.wfn_logging")
+
+wfn_logger = logging.wfn_logger
+set_logger_context = logging.set_logger_context
 
 API_GW_PAGE_CLASSIFIER_HOST = os.getenv('API_GW_PAGE_CLASSIFIER_HOST', None)
 API_GW_PAGE_CLASSIFIER_KEY = os.getenv('API_GW_PAGE_CLASSIFIER_KEY', None)
